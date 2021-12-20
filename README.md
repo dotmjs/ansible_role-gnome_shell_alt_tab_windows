@@ -6,7 +6,7 @@ A simple Ansible Role to sets the Gnome Shell "switch-windows" shortcut to use A
 Example Playbook
 ----------------
 
-Playbook "user-config.yml"
+Playbook "laptop.yml"
 
     - hosts: localhost
       roles:
@@ -14,7 +14,7 @@ Playbook "user-config.yml"
 
 Invocation
 
-    ansible-playbook -i localhost --ask-become-pass user-config.yml
+    ansible-playbook -i localhost --ask-become-pass laptop.yml
 
 License
 -------
