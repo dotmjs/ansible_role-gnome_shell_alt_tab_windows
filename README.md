@@ -13,6 +13,7 @@ Playbook "user-config.yml"
       - dotmjs.gnome_shell_alt_tab_windows
 
 Invocation
+
     ansible-playbook -i localhost --ask-become-pass user-config.yml
 
 License
