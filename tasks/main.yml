@@ -1,0 +1,31 @@
+---
+# tasks file for dotmjs.gnome_shell_alt_tab
+- name: Ensure package dependencies are installed
+  package:
+    name: "python3-psutil"
+    state: present
+  become: yes
+  become_user: root
+  
+- name: Set switch-applications to CTL+ALT+TAB
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-applications"
+    value: "['']"
+    state: present
+    
+- name: Set switch-applications-backward to CTL+SHIFT+ALT+TAB
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-applications-backward"
+    value: "['']"
+    state: present
+- name: Set switch-windows to Alt+Tab
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-windows"
+    value: "['<Alt>Tab']"
+    state: present
+    
+- name: Update switch-windows-backward to Shift+Alt+Tab if not already set
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-windows-backward"
+    value: "['<Shift><Alt>Tab']"
+    state: present
